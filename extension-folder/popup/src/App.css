@@ -1,0 +1,137 @@
+/* General styling */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 1em;
+  width: 250px;
+}
+
+/* Title styling */
+h1 {
+  color: black;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1::before {
+  content: "📢";
+  font-size: 1.2em;
+  margin-right: 0.5em;
+}
+
+/* Message container */
+.message {
+  padding: 1em;
+  margin: 0.5em 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Priority Colors */
+.message.high {
+  background-color: #ffcccc;
+  border: 1px solid darkred;
+}
+
+.message.normal {
+  background-color: #fff7cc;
+  border: 1px solid goldenrod;
+}
+
+.message.low {
+  background-color: #e0ffd1;
+  border: 1px solid green;
+}
+
+.message.read {
+  opacity: 0.5;
+}
+
+/* Circular Exclamation Mark */
+.exclamation {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background-color: darkred;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  animation: pulsate 1s infinite;
+}
+
+.exclamation.read {
+  animation: none; /* Disable animation when message is read */
+}
+
+/* Pulsate Animation */
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Button styling */
+button {
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.read {
+  background-color: #ccc;
+  color: #666;
+  cursor: default;
+}
+
+button.read:hover {
+  background-color: #ccc;
+}
+
+/* Scrollable message list */
+.message-list {
+  max-height: 180px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: black #f1f1f1;
+}
+
+.message-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 4px;
+}
+
+.message-list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
